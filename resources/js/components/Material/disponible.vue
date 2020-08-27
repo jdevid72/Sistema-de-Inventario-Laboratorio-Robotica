@@ -32,7 +32,7 @@
                                     <th>Estado</th>
                                 </tr></thead>
                                 <tbody v-for="material in searchmaterial" :key="material.id">
-                                <tr v-if="material.cantidad_prestamo <=  material.cantidad_total">
+                                <tr v-if="(material.cantidad_prestamo - material.cantidad_total) != 0">
 
                                     <td><img :src="material.imagen" alt="image" style="width:60px;height:50px"></td>
                                     <td>{{material.nombre}}</td>
@@ -44,7 +44,7 @@
 
 
                                     <td>
-                                        <div v-if="material.status == 1" class="badge badge-success">Disponible</div>
+                                        <div v-if="(material.cantidad_total - material.cantidad_prestamo) != 0" class="badge badge-success">Disponible</div>
                                         <div v-else class="badge badge-danger">No Disponible</div>
                                     </td>
                                 </tr>

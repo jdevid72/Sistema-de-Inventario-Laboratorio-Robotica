@@ -43,7 +43,7 @@
                                     <td>{{persona.direccion}}</td>
                                     <td>{{persona.ci}}</td>
                                     <td>{{persona.cu}}</td>
-                                    <td>{{persona.tipo[0].descripcion}}</td>
+                                    <td>{{persona.tipo.descripcion}}</td>
                                     <td>{{persona.telefono}}</td>
                                     <td>{{persona.fecha_nacimiento}}</td>
                                     <td>{{persona.nombre_respaldo}}</td>

@@ -8,7 +8,7 @@
     <!--  Genera User  -->
    <meta name="user" content="{{ Auth::user() }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Inventory</title>
+    <title>USFX ROBOTICA</title>
     <!-- General CSS Files -->
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">

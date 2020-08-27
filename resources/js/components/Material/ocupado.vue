@@ -27,7 +27,7 @@
                                     <th>Nombre</th>
                                     <th>Modelo</th>
                                     <th>Caracteristica</th>
-                                    <th>Cantidad Prestado</th>
+                                    <th>Cantidad Disponible</th>
                                     <th>Fecha</th>
                                     <th>Estado</th>
                                 </tr></thead>
@@ -44,7 +44,7 @@
 
 
                                     <td>
-                                        <div v-if="material.status == 2" class="badge badge-danger">No Disponible</div>
+                                        <div class="badge badge-danger">No Disponible</div>
                                     </td>
                                 </tr>
                                 </tbody></table>

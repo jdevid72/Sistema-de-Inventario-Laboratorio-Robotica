@@ -48650,7 +48650,8 @@ var render = function() {
                     _vm._v(" "),
                     _vm._l(_vm.searchmaterial, function(material) {
                       return _c("tbody", { key: material.id }, [
-                        material.cantidad_prestamo <= material.cantidad_total
+                        material.cantidad_prestamo - material.cantidad_total !=
+                        0
                           ? _c("tr", [
                               _c("td", [
                                 _c("img", {
@@ -48682,7 +48683,9 @@ var render = function() {
                               _c("td", [_vm._v(_vm._s(material.fecha))]),
                               _vm._v(" "),
                               _c("td", [
-                                material.status == 1
+                                material.cantidad_total -
+                                  material.cantidad_prestamo !=
+                                0
                                   ? _c(
                                       "div",
                                       { staticClass: "badge badge-success" },
@@ -49484,15 +49487,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("td", [_vm._v(_vm._s(material.fecha))]),
                               _vm._v(" "),
-                              _c("td", [
-                                material.status == 2
-                                  ? _c(
-                                      "div",
-                                      { staticClass: "badge badge-danger" },
-                                      [_vm._v("No Disponible")]
-                                    )
-                                  : _vm._e()
-                              ])
+                              _vm._m(2, true)
                             ])
                           : _vm._e()
                       ])
@@ -49529,11 +49524,21 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Caracteristica")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cantidad Prestado")]),
+        _c("th", [_vm._v("Cantidad Disponible")]),
         _vm._v(" "),
         _c("th", [_vm._v("Fecha")]),
         _vm._v(" "),
         _c("th", [_vm._v("Estado")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("div", { staticClass: "badge badge-danger" }, [
+        _vm._v("No Disponible")
       ])
     ])
   }
@@ -50803,7 +50808,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(persona.cu))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(persona.tipo[0].descripcion))]),
+                        _c("td", [_vm._v(_vm._s(persona.tipo.descripcion))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(persona.telefono))]),
                         _vm._v(" "),
