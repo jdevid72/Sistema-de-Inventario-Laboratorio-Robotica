@@ -9,7 +9,7 @@
                                 <h4>Listar Tipo Persona</h4>
                             </div>
                             <div>
-                                <input type="text" class="form-control mr-50" placeholder="Search" v-model="searchData" @keyup="searchFillter">
+                                <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchData" @keyup="searchFillter">
                             </div>
                             <div>
                                 <router-link :to="{name:'tipoCreate'}" class="btn btn-success">Agregar Tipo</router-link>

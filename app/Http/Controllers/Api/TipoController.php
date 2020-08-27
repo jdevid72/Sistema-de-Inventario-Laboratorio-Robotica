@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Tipo;
+use Illuminate\Support\Facades\DB;
 
 class TipoController extends Controller
 {
@@ -19,6 +20,27 @@ class TipoController extends Controller
         return response()->json($tipo);
     }
 
+
+    public function tipoInfo()
+    {
+        $tipo = Tipo::paginate(2);
+        return $tipo;
+    }
+
+    public function search()
+    {
+        if (Request::get('q') == "")
+            return $this->tipoInfo();
+
+        if ($search = Request::get('q')) {
+            $tipo = DB::table('tipos')
+            ->where(function ($query) use ($search) {
+                $query->where('tipos.descripcion', 'LIKE', "%$search%");
+            })->paginate(2);
+        }
+
+        return $tipo;
+    }
 
 
     /**

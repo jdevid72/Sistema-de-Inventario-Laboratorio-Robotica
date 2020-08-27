@@ -7,11 +7,14 @@ Vue.use(VueRouter);
 //sweetalert2
 import Swal from "sweetalert2";
 window.Swal = Swal;
+
+window.Fire = new Vue();
+
 const Toast = Swal.mixin({
-    toast:true,
-    position:'top-end',
-    showConfirmButton:false,
-    timer:3000,
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
 });
 //laravel vue pagination
 Vue.component('pagination', require('laravel-vue-pagination'));
@@ -24,7 +27,7 @@ window.Reload = new Vue();
 //import user helpers
 import User from "./Helpers/User";
 window.User = User;
-import {routes} from './routes';
+import { routes } from './routes';
 const router = new VueRouter({
     routes,
 });

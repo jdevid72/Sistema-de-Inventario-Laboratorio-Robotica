@@ -38,10 +38,8 @@ Route::group(['middleware' => 'api','namespace'=>'Api'],function ($router) {
 
 
     Route::apiResource('tipos', 'TipoController');
-
-    
-
-    Route::apiResource('products','ProductController');
+    Route::get('tipos-info', 'TipoController@tipoInfo');
+    Route::get('findTipo', 'TipoController@search'); 
 
 
 

@@ -51866,7 +51866,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control mr-50",
-                  attrs: { type: "text", placeholder: "Search" },
+                  attrs: { type: "text", placeholder: "Buscar" },
                   domProps: { value: _vm.searchData },
                   on: {
                     keyup: _vm.searchFillter,
@@ -67404,6 +67404,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 
 
 window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a;
+window.Fire = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.mixin({
   toast: true,
   position: 'top-end',
