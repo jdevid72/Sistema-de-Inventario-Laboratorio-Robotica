@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-08-2020 a las 03:37:51
+-- Tiempo de generación: 27-08-2020 a las 20:25:20
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -45,16 +45,16 @@ CREATE TABLE `materials` (
 --
 
 INSERT INTO `materials` VALUES
-(1, 'Node', 'PCI', '1 GB', 7, 5, '2020-08-26', NULL, '1'),
-(2, 'Rasberry Pi', 'B+', '512 MB Sin Fuente EXterna', 10, 5, '2020-08-26', 'backEnd/assets/img/material/1598490556.jpeg', '1'),
-(3, 'Servo', 'Metalico', '180°', 20, 0, '2020-08-26', NULL, '1'),
-(4, 'Servo', 'Plastico', '90°', 10, 10, '2020-08-26', NULL, '1'),
-(5, 'Arduino', 'Uno', '10 mB', 20, 20, '2020-08-26', NULL, '1'),
-(6, 'Arduino', 'Nano', 'Sin Memoria', 25, 15, '2020-08-27', NULL, '1'),
-(7, 'LET LCD', '2.5 volts', '3 Pines', 5, 5, '2020-08-26', NULL, '1'),
-(8, 'Node', 'MCU', '10 MB', 9, 9, '2020-08-26', NULL, '1'),
-(9, 'Sensor', 'MC78', 'Sonido', 7, 7, '2020-08-26', NULL, '1'),
-(10, 'Sensor', 'OH2', 'Temperatura', 9, 9, '2020-08-26', NULL, '1');
+(1, 'Node', 'PCI', '1 GB', 7, 5, '2020-08-26', 'backEnd/assets/img/material/1598549776.jpeg', '1'),
+(2, 'Rasberry Pi', 'B+', '512 MB Sin Fuente EXterna', 10, 5, '2020-08-26', 'backEnd/assets/img/material/1598549803.jpeg', '1'),
+(3, 'Servo', 'Metalico', '180°', 20, 0, '2020-08-26', 'backEnd/assets/img/material/1598549836.jpeg', '1'),
+(4, 'Servo', 'Plastico', '90°', 10, 10, '2020-08-26', 'backEnd/assets/img/material/1598549852.jpeg', '1'),
+(5, 'Arduino', 'Uno', '10 mB', 20, 20, '2020-08-26', 'backEnd/assets/img/material/1598549895.jpeg', '1'),
+(6, 'Arduino', 'Nano', 'Sin Memoria', 25, 15, '2020-08-27', 'backEnd/assets/img/material/1598549916.jpeg', '1'),
+(7, 'LET LCD', '2.5 volts', '3 Pines', 5, 5, '2020-08-26', 'backEnd/assets/img/material/1598549939.jpeg', '1'),
+(8, 'Node', 'MCU', '10 MB', 9, 9, '2020-08-26', 'backEnd/assets/img/material/1598549959.jpeg', '1'),
+(9, 'Sensor', 'MC78', 'Sonido', 7, 7, '2020-08-26', 'backEnd/assets/img/material/1598549976.jpeg', '1'),
+(10, 'Sensor', 'OH2', 'Temperatura', 9, 9, '2020-08-26', 'backEnd/assets/img/material/1598549990.jpeg', '1');
 
 -- --------------------------------------------------------
 
@@ -129,14 +129,16 @@ CREATE TABLE `personas` (
 --
 
 INSERT INTO `personas` VALUES
-(1, 'José', 'Duran', '165465464', '45657654564', 1, 'Barrio Capital s/n', 63747747, '2020-08-26', NULL, 'Jose', 63747747),
-(2, 'David ', 'Esscalante', '645635413', '54676513143', 3, 'Petrolero', 8765454654651, '1990-08-25', '', 'Enrrique Esscalante', 789455354),
-(3, 'antonio', 'garcia', '654654654', '646546547', 2, 'Barrio Santo Domingo', 76454654, '2019-06-25', NULL, 'carmen garzia', 78464654354),
-(8, 'juan', 'lopez', '78964654654', '7984465787', 2, 'Barrio Santo Domingo', 46846445564, '2019-06-25', NULL, 'pedro garzia', 789465445),
-(9, 'francisco', 'pimienta', '431234123', '12342354', 2, 'Barrio Santo Domingo', 5432534, '2019-06-25', NULL, 'antonio rodriguez', 432545235),
-(10, 'jose', 'jimenez', '46456', '111-185', 2, 'Barrio Santo Domingo', 36546354, '2019-06-25', NULL, 'david navarro', 34534256),
-(11, 'javier', 'diaz', '465446456', '111-789', 2, 'Barrio Santo Domingo', 756746, '2019-06-25', NULL, 'alejandro serrano', 67547567),
-(12, 'carlos', 'ruiz', '35324563', '222-789', 2, 'Barrio Santo Domingo', 56474564756, '2019-06-25', NULL, 'angel gomez', 67567865);
+(1, 'José', 'Duran', '165465464', '45657654564', 1, 'Barrio Capital s/n', 63747747, '2020-08-26', 'backEnd/assets/img/perfiles/1598550759.jpeg', 'Jose', 63747747),
+(2, 'David', 'Esscalante', '645635413', '54676513143', 3, 'Petrolero', 8765454654651, '1990-08-25', 'backEnd/assets/img/perfiles/1598550911.jpeg', 'Enrrique Esscalante', 789455354),
+(3, 'antonio', 'garcia', '654654654', '646546547', 2, 'Barrio Santo Domingo', 76454654, '2019-06-25', 'backEnd/assets/img/perfiles/1598550922.jpeg', 'carmen garzia', 78464654354),
+(8, 'juan', 'lopez', '78964654654', '7984465787', 2, 'Barrio Santo Domingo', 46846445564, '2019-06-25', 'backEnd/assets/img/perfiles/1598550936.jpeg', 'pedro garzia', 789465445),
+(9, 'francisco', 'pimienta', '431234123', '12342354', 2, 'Barrio Santo Domingo', 5432534, '2019-06-25', 'backEnd/assets/img/perfiles/1598550957.jpeg', 'antonio rodriguez', 432545235),
+(10, 'jose', 'jimenez', '46456', '111-185', 2, 'Barrio Santo Domingo', 36546354, '2019-06-25', 'backEnd/assets/img/perfiles/1598550977.jpeg', 'david navarro', 34534256),
+(11, 'javier', 'diaz', '465446456', '111-789', 2, 'Barrio Santo Domingo', 756746, '2019-06-25', 'backEnd/assets/img/perfiles/1598550993.jpeg', 'alejandro serrano', 67547567),
+(12, 'Sara', 'ruiz', '35324563', '222-789', 2, 'Barrio Santo Domingo', 56474564756, '2019-06-25', 'backEnd/assets/img/perfiles/1598551014.jpeg', 'angel gomez', 67567865),
+(13, 'Marisol', 'zeballos', '7894651', '458-789', 2, 'San Pedro', 7456128, '2020-08-27', 'backEnd/assets/img/perfiles/1598551042.jpeg', 'don quijote', 7894561235879),
+(14, 'Godoñes', 'padrino', '79845648', '155-785', 3, 'Don jose', 789654127, '2020-08-27', 'backEnd/assets/img/perfiles/1598550893.jpeg', 'quien sabe', 78541787);
 
 -- --------------------------------------------------------
 
@@ -165,7 +167,7 @@ INSERT INTO `prestamos` VALUES
 (2, 1, 2, 1, 0, 3, '2020-08-26', '2020-08-15', '2'),
 (3, 2, 7, 2, 2, NULL, '2020-08-21', NULL, '1'),
 (4, 12, 8, 2, 5, NULL, '2020-08-15', NULL, '1'),
-(5, 2, 6, 1, 3, NULL, '2020-08-20', NULL, '1'),
+(5, 2, 6, 1, 0, 2, '2020-08-20', '2020-08-27', '2'),
 (6, 8, 10, 2, 5, NULL, '2020-08-15', NULL, '1'),
 (7, 8, 4, 1, 5, NULL, '2020-08-15', NULL, '1'),
 (8, 9, 3, 1, 2, NULL, '2020-08-15', NULL, '1');
@@ -287,7 +289,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
