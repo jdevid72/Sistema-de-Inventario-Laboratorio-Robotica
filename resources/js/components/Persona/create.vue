@@ -176,7 +176,7 @@
                     let reader = new FileReader();
                     reader.onload = e=>{
                         $("#imgHide").show()
-                        this.form.image = e.target.result;
+                        this.form.perfil = e.target.result;
                     }
                     reader.readAsDataURL(file);
                 }

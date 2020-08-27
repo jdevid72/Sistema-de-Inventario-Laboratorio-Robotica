@@ -2239,23 +2239,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index",
   data: function data() {
@@ -2395,23 +2378,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index",
   data: function data() {
@@ -2469,23 +2435,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3136,23 +3085,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index",
   data: function data() {
@@ -3536,7 +3468,7 @@ __webpack_require__.r(__webpack_exports__);
 
         reader.onload = function (e) {
           $("#imgHide").show();
-          _this3.form.image = e.target.result;
+          _this3.form.perfil = e.target.result;
         };
 
         reader.readAsDataURL(file);
@@ -3789,21 +3721,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4353,23 +4270,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index",
   data: function data() {
@@ -4647,23 +4547,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -47623,9 +47506,7 @@ var render = function() {
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
+          ])
         ])
       ])
     ])
@@ -47660,52 +47541,6 @@ var staticRenderFns = [
       _c("th", [_vm._v("Estado")]),
       _vm._v(" "),
       _c("th", { attrs: { colspan: "2" } }, [_vm._v("Accion")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer text-right" }, [
-      _c("nav", { staticClass: "d-inline-block" }, [
-        _c("ul", { staticClass: "pagination mb-0" }, [
-          _c("li", { staticClass: "page-item disabled" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", tabindex: "-1" }
-              },
-              [_c("i", { staticClass: "fas fa-chevron-left" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item active" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1 "),
-              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fas fa-chevron-right" })
-            ])
-          ])
-        ])
-      ])
     ])
   }
 ]
@@ -47854,9 +47689,7 @@ var render = function() {
                 2
               )
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
+          ])
         ])
       ])
     ])
@@ -47892,52 +47725,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Fecha Devolucion")]),
         _vm._v(" "),
         _c("th", [_vm._v("Estado")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer text-right" }, [
-      _c("nav", { staticClass: "d-inline-block" }, [
-        _c("ul", { staticClass: "pagination mb-0" }, [
-          _c("li", { staticClass: "page-item disabled" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", tabindex: "-1" }
-              },
-              [_c("i", { staticClass: "fas fa-chevron-left" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item active" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1 "),
-              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fas fa-chevron-right" })
-            ])
-          ])
-        ])
       ])
     ])
   }
@@ -48086,9 +47873,7 @@ var render = function() {
                 2
               )
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
+          ])
         ])
       ])
     ])
@@ -48126,52 +47911,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Fecha Devolucion")]),
         _vm._v(" "),
         _c("th", [_vm._v("Estado")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer text-right" }, [
-      _c("nav", { staticClass: "d-inline-block" }, [
-        _c("ul", { staticClass: "pagination mb-0" }, [
-          _c("li", { staticClass: "page-item disabled" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", tabindex: "-1" }
-              },
-              [_c("i", { staticClass: "fas fa-chevron-left" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item active" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1 "),
-              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fas fa-chevron-right" })
-            ])
-          ])
-        ])
       ])
     ])
   }
@@ -48562,7 +48301,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Agregar Persona")
+          _vm._v("Agregar Material")
         ])
       ])
     ])
@@ -49235,7 +48974,9 @@ var render = function() {
                         _c("td", [_vm._v(_vm._s(material.fecha))]),
                         _vm._v(" "),
                         _c("td", [
-                          material.status == 1
+                          material.cantidad_total -
+                            material.cantidad_prestamo !=
+                          0
                             ? _c(
                                 "div",
                                 { staticClass: "badge badge-success" },
@@ -49288,9 +49029,7 @@ var render = function() {
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
+          ])
         ])
       ])
     ])
@@ -49325,52 +49064,6 @@ var staticRenderFns = [
       _c("th", [_vm._v("Estado")]),
       _vm._v(" "),
       _c("th", { attrs: { colspan: "2" } }, [_vm._v("Accion")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer text-right" }, [
-      _c("nav", { staticClass: "d-inline-block" }, [
-        _c("ul", { staticClass: "pagination mb-0" }, [
-          _c("li", { staticClass: "page-item disabled" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", tabindex: "-1" }
-              },
-              [_c("i", { staticClass: "fas fa-chevron-left" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item active" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1 "),
-              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fas fa-chevron-right" })
-            ])
-          ])
-        ])
-      ])
     ])
   }
 ]
@@ -50783,14 +50476,15 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body p-0" }, [
             _c("div", { staticClass: "table-responsive" }, [
-              _c("table", { staticClass: "table table-striped table-md" }, [
-                _c(
-                  "tbody",
-                  [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _vm._l(_vm.searchPersona, function(persona) {
-                      return _c("tr", { key: persona.id }, [
+              _c(
+                "table",
+                { staticClass: "table table-striped table-md" },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _vm._l(_vm.searchPersona, function(persona) {
+                    return _c("tbody", { key: persona.id }, [
+                      _c("tr", [
                         _c("td", [
                           _c("img", {
                             staticStyle: { width: "60px", height: "50px" },
@@ -50808,7 +50502,9 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(persona.cu))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(persona.tipo.descripcion))]),
+                        persona.tipo != null
+                          ? _c("td", [_vm._v(_vm._s(persona.tipo.descripcion))])
+                          : _c("td"),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(persona.telefono))]),
                         _vm._v(" "),
@@ -50854,15 +50550,13 @@ var render = function() {
                           )
                         ])
                       ])
-                    })
-                  ],
-                  2
-                )
-              ])
+                    ])
+                  })
+                ],
+                2
+              )
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
+          ])
         ])
       ])
     ])
@@ -50879,75 +50573,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Perfil")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Nombre")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Apellido")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Direccion")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("CI")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("CU")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Tipo")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Telefono")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Fecha Nacimiento")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Nombre del Garante")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Telefono del Garante")]),
-      _vm._v(" "),
-      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Accion")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer text-right" }, [
-      _c("nav", { staticClass: "d-inline-block" }, [
-        _c("ul", { staticClass: "pagination mb-0" }, [
-          _c("li", { staticClass: "page-item disabled" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", tabindex: "-1" }
-              },
-              [_c("i", { staticClass: "fas fa-chevron-left" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item active" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1 "),
-              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fas fa-chevron-right" })
-            ])
-          ])
-        ])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Perfil")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Apellido")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Direccion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("CI")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("CU")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Tipo")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Telefono")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Fecha Nacimiento")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nombre del Garante")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Telefono del Garante")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Accion")])
       ])
     ])
   }
@@ -51830,7 +51480,11 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_c("i", { staticClass: "fas fa-edit" })]
+                              [
+                                _c("i", { staticClass: "fas fa-edit" }, [
+                                  _vm._v("Devolver")
+                                ])
+                              ]
                             )
                           ],
                           1
@@ -51857,9 +51511,7 @@ var render = function() {
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
+          ])
         ])
       ])
     ])
@@ -51893,53 +51545,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Estado")]),
       _vm._v(" "),
-      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer text-right" }, [
-      _c("nav", { staticClass: "d-inline-block" }, [
-        _c("ul", { staticClass: "pagination mb-0" }, [
-          _c("li", { staticClass: "page-item disabled" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", tabindex: "-1" }
-              },
-              [_c("i", { staticClass: "fas fa-chevron-left" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item active" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1 "),
-              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fas fa-chevron-right" })
-            ])
-          ])
-        ])
-      ])
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Accion")])
     ])
   }
 ]
@@ -52342,9 +51948,7 @@ var render = function() {
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
+          ])
         ])
       ])
     ])
@@ -52365,52 +51969,6 @@ var staticRenderFns = [
       _c("th", [_vm._v("Descripcion")]),
       _vm._v(" "),
       _c("th", [_vm._v("Accion")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer text-right" }, [
-      _c("nav", { staticClass: "d-inline-block" }, [
-        _c("ul", { staticClass: "pagination mb-0" }, [
-          _c("li", { staticClass: "page-item disabled" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", tabindex: "-1" }
-              },
-              [_c("i", { staticClass: "fas fa-chevron-left" })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item active" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1 "),
-              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fas fa-chevron-right" })
-            ])
-          ])
-        ])
-      ])
     ])
   }
 ]

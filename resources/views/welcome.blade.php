@@ -45,16 +45,6 @@
                     <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                             <i data-feather="maximize"></i>
                         </a></li>
-                    <li>
-                        <form class="form-inline mr-auto">
-                            <div class="search-element">
-                                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" data-width="200">
-                                <button class="btn" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -67,7 +57,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="dropdown active">
-                        <router-link :to="{name: 'personaIndex'}" class="nav-link"><i data-feather="monitor"></i><span>Menu Clientes</span></router-link>
+                        <router-link :to="{name: 'prestamoIndex'}" class="nav-link"><i data-feather="monitor"></i><span>Inicio</span></router-link>
                     </li>
 
                     
@@ -79,7 +69,7 @@
                                 data-feather="briefcase"></i><span>Tipo Persona</span></a>
                         <ul class="dropdown-menu">
                             <li><router-link class="nav-link" :to="{name: 'tipoCreate'}">Agregar Tipo</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'tipoIndex'}">Listar Tipos</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'tipoIndex'}">Listar</router-link></li>
                         </ul>
                     </li>
 
@@ -87,7 +77,7 @@
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                 data-feather="briefcase"></i><span>Registro Personas</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'personaCreate'}">Agregar Nuevo Registro</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'personaCreate'}">Nuevo Registro</router-link></li>
                             <li><router-link class="nav-link" :to="{name:'personaIndex'}">Listar Registro</router-link></li>
                         </ul>
                     </li>
@@ -97,7 +87,7 @@
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                 data-feather="briefcase"></i><span>Materiales Laboratorio</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'materialCreate'}">Agregar Nuevo Material</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'materialCreate'}">Nuevo Material</router-link></li>
                             <li><router-link class="nav-link" :to="{name:'materialIndex'}">Listar Materiales</router-link></li>
                         </ul>
                     </li>
@@ -109,7 +99,7 @@
                                 data-feather="briefcase"></i><span>Prestamos Devoluciones</span></a>
                         <ul class="dropdown-menu">
                             <li><router-link class="nav-link" :to="{name: 'prestamoCreate'}">Nuevo Prestamo</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'prestamoIndex'}">Devolucion Prestamo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'prestamoIndex'}">Devolver Prestamo</router-link></li>
                         </ul>
                     </li>
 
@@ -144,7 +134,7 @@
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-cogs"></i><span>Settings</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'logout'}">Logout</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'logout'}">Cerrar Session</router-link></li>
                         </ul>
                     </li>
                 </ul>

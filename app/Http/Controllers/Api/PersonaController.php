@@ -40,7 +40,7 @@ class PersonaController extends Controller
             'apellido' => 'required|string',
             'ci' => 'required|string|unique:personas',
             'cu' => 'required|string|unique:personas',
-            'tipo_id' => 'nullable|unique:personas',
+            'tipo_id' => 'required',
             'fecha_nacimiento' => 'required|date',
 
         ]);
@@ -98,19 +98,19 @@ class PersonaController extends Controller
             'apellido' => 'required|string',
             'ci' => 'required|string:personas',
             'cu' => 'required|string:personas',
-            'tipo_id' => 'nullable:personas',
+            'tipo_id' => 'required',
             'fecha_nacimiento' => 'required|date',
 
 
         ]);
 
         $p = Persona::where('id', $id)->first();
-        if ($request->newperfil) {
-            $position = strpos($request->newperfil, ';');
-            $sub = substr($request->newperfil, 0, $position);
+        if ($request->newPerfil) {
+            $position = strpos($request->newPerfil, ';');
+            $sub = substr($request->newPerfil, 0, $position);
             $ext = explode('/', $sub)[1];
             $imageName = time() . "." . $ext;
-            $img = Image::make($request->newperfil)->resize(240, 240);
+            $img = Image::make($request->newPerfil)->resize(240, 240);
             $uploadPath = 'backEnd/assets/img/perfiles/';
             $imgUrl = $uploadPath . $imageName;
             $img->save($imgUrl);

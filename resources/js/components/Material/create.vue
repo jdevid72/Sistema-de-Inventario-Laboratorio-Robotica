@@ -78,7 +78,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Agregar Persona</button>
+                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Agregar Material</button>
                                     </div>
                                 </div>
                             </div>

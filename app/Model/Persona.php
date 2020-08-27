@@ -11,6 +11,6 @@ class Persona extends Model
 
     public function tipo()
     {
-        return $this->hasMany(Tipo::class,'id');
+        return $this->belongsTo(Tipo::class,'id');
     }
 }

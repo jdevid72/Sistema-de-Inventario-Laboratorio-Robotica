@@ -30,7 +30,7 @@
                                     <th>Fecha Prestamo</th>
                                     <th>Fecha Devolucion</th>
                                     <th>Estado</th>
-                                    <th colspan="2">Action</th>
+                                    <th colspan="2">Accion</th>
                                 </tr>
                                 <tr v-for="prestamo in searchPrestamo" :key="prestamo.id">
                                     <td v-if="prestamo.persona != null">{{prestamo.persona.nombre}} {{prestamo.persona.apellido}}</td>
@@ -48,7 +48,7 @@
 
 
                                     <td colspan="1">
-                                        <router-link :to="{name:'prestamoEdit',params:{id:prestamo.id}}" class="btn-sm btn-info"><i class="fas fa-edit"></i></router-link>
+                                        <router-link :to="{name:'prestamoEdit',params:{id:prestamo.id}}" class="btn-sm btn-info"><i class="fas fa-edit">Devolver</i></router-link>
                                     </td>
                                     <td colspan="1">
                                         <a @click="prestamoDel(prestamo.id)" class="btn-sm btn-danger"><i class="fas fa-trash"></i></a>
@@ -56,23 +56,6 @@
                                 </tr>
                                 </tbody></table>
                         </div>
-                    </div>
-                    <div class="card-footer text-right">
-                        <nav class="d-inline-block">
-                            <ul class="pagination mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-striped table-md">
-                                <tbody><tr>
+                                <thead><tr>
 
                                     <th>Perfil</th>
                                     <th>Nombre</th>
@@ -34,8 +34,9 @@
                                     <th>Nombre del Garante</th>
                                     <th>Telefono del Garante</th>
                                     <th colspan="2">Accion</th>
-                                </tr>
-                                <tr v-for="persona in searchPersona" :key="persona.id">
+                                </tr></thead>
+                                <tbody v-for="persona in searchPersona" :key="persona.id">
+                                <tr>
 
                                     <td><img :src="persona.perfil" alt="image" style="width:60px;height:50px"></td>
                                     <td>{{persona.nombre}}</td>
@@ -43,7 +44,8 @@
                                     <td>{{persona.direccion}}</td>
                                     <td>{{persona.ci}}</td>
                                     <td>{{persona.cu}}</td>
-                                    <td>{{persona.tipo.descripcion}}</td>
+                                    <td v-if="persona.tipo != null">{{persona.tipo.descripcion}}</td>
+                                    <td v-else></td>
                                     <td>{{persona.telefono}}</td>
                                     <td>{{persona.fecha_nacimiento}}</td>
                                     <td>{{persona.nombre_respaldo}}</td>
@@ -59,23 +61,6 @@
                                 </tr>
                                 </tbody></table>
                         </div>
-                    </div>
-                    <div class="card-footer text-right">
-                        <nav class="d-inline-block">
-                            <ul class="pagination mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
