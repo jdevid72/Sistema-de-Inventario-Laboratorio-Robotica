@@ -6,10 +6,10 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h4>Actualizar Tipo Persona</h4>
+                                <h4>Editar Tipo Persona</h4>
                             </div>
-                            <div>
-                                <router-link :to="{name:'tipoIndex'}" class="btn btn-success">Listar Tipo Personas</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'tipoIndex'}" class="btn btn-success">Ver Personas</router-link>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Actualizar</button>
+                                        <button class="btn btn-info"><i class="fas fa-plus"></i>&nbsp Actualizar</button>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: '¡Inicie sesión primero!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

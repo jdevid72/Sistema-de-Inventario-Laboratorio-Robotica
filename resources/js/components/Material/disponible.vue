@@ -11,8 +11,8 @@
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchFillter" @keyup="searchmaterial">
                             </div>
-                            <div>
-                                <router-link :to="{name:'materialCreate'}" class="btn btn-success">Agregar Material de Laboratorio</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'materialCreate'}" class="btn btn-success">Nuevo Material</router-link>
                             </div>
                         </div>
 
@@ -28,8 +28,6 @@
                                     <th>Modelo</th>
                                     <th>Caracteristica</th>
                                     <th>Cantidad Restante</th>
-                                    <th>Fecha</th>
-                                    <th>Estado</th>
                                 </tr></thead>
                                 <tbody v-for="material in searchmaterial" :key="material.id">
                                 <tr v-if="(material.cantidad_prestamo - material.cantidad_total) != 0">
@@ -39,14 +37,6 @@
                                     <td>{{material.modelo}}</td>
                                     <td>{{material.caracteristicas}}</td>
                                     <td>{{material.cantidad_total - material.cantidad_prestamo}}</td>
-                                    <td>{{material.fecha}}</td>
-
-
-
-                                    <td>
-                                        <div v-if="(material.cantidad_total - material.cantidad_prestamo) != 0" class="badge badge-success">Disponible</div>
-                                        <div v-else class="badge badge-danger">No Disponible</div>
-                                    </td>
                                 </tr>
                                 </tbody></table>
                         </div>
@@ -85,7 +75,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: 'Iniciar Session',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

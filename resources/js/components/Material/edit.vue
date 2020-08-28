@@ -6,10 +6,10 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h4>Agregar Material Laboratorio</h4>
+                                <h4>Editar Material</h4>
                             </div>
-                            <div>
-                                <router-link :to="{name:'materialIndex'}" class="btn btn-success">Listar Materiales</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'materialIndex'}" class="btn btn-success">Ver Materiales</router-link>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Agregar Material</button>
+                                        <button class="btn btn-info"><i class="fas fa-plus"></i>&nbsp Actualizar</button>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: '¡Inicie sesión primero!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

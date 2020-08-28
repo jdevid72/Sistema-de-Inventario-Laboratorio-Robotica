@@ -5,10 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!--  Genera User  -->
-   <meta name="user" content="{{ Auth::user() }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>USFX ROBOTICA</title>
+    <title>Control de Inventario</title>
     <!-- General CSS Files -->
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -44,98 +42,76 @@
 									collapse-btn"> <i data-feather="align-justify"></i></a></li>
                     <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                             <i data-feather="maximize"></i>
-                        </a></li>
+                        </a>
+                    </li>
+                    <li>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img alt="image" src="{{asset('backEnd')}}/assets/img/LOGO-TECNOLOGIA.png" class="img-thumbnail" width="60"/>
+                        <strong>UMRPSFXCH FACULTAD DE TECNOLOGÍA</strong>
+                    </li>
                 </ul>
             </div>
         </nav>
-        <div class="main-sidebar sidebar-style-2" v-show="$route.path === '/' || $route.path === '/register' ? false : true " style="display: none" id="sidebar">
+        <div class="side main-sidebar sidebar-style-2" v-show="$route.path === '/' || $route.path === '/register' ? false : true " style="display: none" id="sidebar">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-                    <router-link :to="{name: 'materialIndex'}"> <img alt="image" src="{{asset('backEnd')}}/assets/img/usfx.ico" class="header-logo" style="width:80px;height:100px" /> <span
-                            class="logo-name">LABORATORIO ROBOTICA</span>
+                    <router-link :to="{name: 'home'}"> <img alt="image" src="{{asset('backEnd')}}/assets/img/28190-200.png" class="header-logo" /> <span
+                            class="logo-name">Lab. Robótica</span>
                     </router-link>
                 </div>
                 <ul class="sidebar-menu">
+                <li class="menu-header"><strong>Sistema de Inventario</strong></li>   
                     <li class="dropdown active">
-                        <router-link :to="{name: 'prestamoIndex'}" class="nav-link"><i data-feather="monitor"></i><span>Inicio</span></router-link>
-                    </li>
-
-                    
-                    
-
+                        <router-link :to="{name: 'prestamoIndex'}" class="nav-link"><i data-feather="home"></i><span>Inicio</span></router-link>
+                    </li>         
 
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Tipo Persona</span></a>
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-user"></i><span>Tipo Persona</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'tipoCreate'}">Agregar Tipo</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'tipoIndex'}">Listar</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'tipoCreate'}">Nuevo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'tipoIndex'}">Lista</router-link></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Registro Personas</span></a>
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i class="far fa-address-card"></i><span>Personas</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'personaCreate'}">Nuevo Registro</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'personaIndex'}">Listar Registro</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'personaCreate'}">Nuevo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'personaIndex'}">Lista</router-link></li>
                         </ul>
                     </li>
 
 
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Materiales Laboratorio</span></a>
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-microchip"></i><span>Materiales</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'materialCreate'}">Nuevo Material</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'materialIndex'}">Listar Materiales</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'materialCreate'}">Nuevo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'materialIndex'}">Lista</router-link></li>
                         </ul>
                     </li>
 
 
 
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Prestamos Devoluciones</span></a>
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-shopping-bag"></i><span>Prestamos</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'prestamoCreate'}">Nuevo Prestamo</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'prestamoIndex'}">Devolver Prestamo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'prestamoCreate'}">Nuevo</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'prestamoIndex'}">Lista</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'pendientesIndex'}">Pendientes</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'devueltosIndex'}">Devueltos</router-link></li>
                         </ul>
                     </li>
-
-
-                    <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Estado de los Prestamos</span></a>
-                        <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'pendientesIndex'}">Pendientes de Devolucion</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'devueltosIndex'}">Prestamos Devueltos</router-link></li>
-                        </ul>
-                    </li>
-
-                    
-
-                    
 
                    <li class="dropdown">
-                                <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="briefcase"></i><span>Stock</span></a>
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-cubes"></i><span>Stock</span></a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'disponible'}">Material Disponible</router-link></li>
-                            <li><router-link class="nav-link" :to="{name:'ocupado'}">Material Ocupado</router-link></li>
+                            <li><router-link class="nav-link" :to="{name: 'disponible'}">Disponible</router-link></li>
+                            <li><router-link class="nav-link" :to="{name:'ocupado'}">Agotado</router-link></li>
                         </ul>
 
                     </li>
 
-
-
-
-
                     <li class="dropdown">
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-cogs"></i><span>Settings</span></a>
-                        <ul class="dropdown-menu">
-                            <li><router-link class="nav-link" :to="{name: 'logout'}">Cerrar Session</router-link></li>
-                        </ul>
+                        <li><router-link class="nav-link" :to="{name: 'logout'}"><i class="fas fa-power-off"></i>Cerrar Session</router-link></li>
                     </li>
                 </ul>
             </aside>
@@ -178,3 +154,9 @@
 
 </body>
 </html>
+
+<style>
+    .side{
+        background: #e4e4e4;
+    }
+</style>

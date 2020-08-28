@@ -6,13 +6,13 @@
                     <div class="card-header">
                         <div class="d-flex">
                             <div>
-                                <h4>Stock Disponible</h4>
+                                <h4>Stock Agotado</h4>
                             </div>
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchFillter" @keyup="searchmaterial">
                             </div>
-                            <div>
-                                <router-link :to="{name:'materialCreate'}" class="btn btn-success">Agregar Nuevo Material</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'materialCreate'}" class="btn btn-success">Nuevo Material</router-link>
                             </div>
                         </div>
 
@@ -27,9 +27,6 @@
                                     <th>Nombre</th>
                                     <th>Modelo</th>
                                     <th>Caracteristica</th>
-                                    <th>Cantidad Disponible</th>
-                                    <th>Fecha</th>
-                                    <th>Estado</th>
                                 </tr></thead>
                                 <tbody v-for="material in searchmaterial" :key="material.id">
                                 <tr v-if="(material.cantidad_total - material.cantidad_prestamo) < 1">
@@ -38,14 +35,6 @@
                                     <td>{{material.nombre}}</td>
                                     <td>{{material.modelo}}</td>
                                     <td>{{material.caracteristicas}}</td>
-                                    <td>{{material.cantidad_total - material.cantidad_prestamo}}</td>
-                                    <td>{{material.fecha}}</td>
-
-
-
-                                    <td>
-                                        <div class="badge badge-danger">No Disponible</div>
-                                    </td>
                                 </tr>
                                 </tbody></table>
                         </div>
@@ -84,7 +73,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: 'Iniciar Session',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

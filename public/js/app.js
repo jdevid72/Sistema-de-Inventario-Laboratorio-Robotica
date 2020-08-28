@@ -2031,13 +2031,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Logout",
   created: function created() {
-    User.logout();
-    Toast.fire({
-      icon: 'success',
-      title: 'Se Acaba de Cerra Session con Exito'
-    });
-    this.$router.push({
-      name: 'login'
+    var _this = this;
+
+    Swal.fire({
+      title: 'Está seguro?',
+      text: "Está a punto de cerrar sessión!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, cerrar sesión',
+      cancelButtonText: 'Cancelar'
+    }).then(function (result) {
+      if (result.value) {
+        User.logout();
+        Toast.fire({
+          icon: 'success',
+          title: 'Logout exitoso'
+        });
+
+        _this.$router.push({
+          name: 'login'
+        });
+      } else {
+        _this.$router.push({
+          name: 'home'
+        });
+      }
     });
   }
 });
@@ -2373,11 +2393,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index",
   data: function data() {
@@ -2406,7 +2421,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: 'Iniciar Sesion!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -2484,13 +2499,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index",
   data: function data() {
@@ -2519,7 +2527,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: 'Iniciar Sesion!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -2701,7 +2709,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -2721,16 +2729,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2808,7 +2806,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: 'Iniciar Session'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -2997,7 +2995,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -3108,13 +3106,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       Swal.fire({
-        title: 'Seguro que Desea Eliminar?',
-        text: "¡No podrás revertir esto!",
+        title: 'Está seguro?',
+        text: "No prodrás revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: '¡Sí, bórralo!'
+        confirmButtonText: 'Si, eliminar!',
+        cancelButtonText: 'Cancelar'
       }).then(function (result) {
         if (result.value) {
           axios["delete"]('api/materials/' + id).then(function () {
@@ -3138,7 +3137,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -3216,17 +3215,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "stock",
   data: function data() {
@@ -3253,7 +3241,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: 'Iniciar Session'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -3479,7 +3467,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -3701,7 +3689,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -3721,7 +3709,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -3814,13 +3801,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       Swal.fire({
-        title: 'Seguro que Desea Eliminar?',
-        text: "¡No podrás revertir esto!",
+        title: 'Está seguro?',
+        text: "No prodrás revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: '¡Sí, bórralo!'
+        confirmButtonText: 'Si, eliminar!',
+        cancelButtonText: 'Cancelar'
       }).then(function (result) {
         if (result.value) {
           axios["delete"]('api/personas/' + id).then(function () {
@@ -3844,7 +3832,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -3873,6 +3861,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -4000,7 +3991,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: 'Iniciar Session!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -4169,7 +4160,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.patch('api/prestamos/' + id, this.form).then(function (res) {
         Toast.fire({
           icon: 'success',
-          title: 'SE Acaba de Registrar la Devolucion con Exito'
+          title: 'Se acaba de Registrar la Devolucion con Exito'
         });
 
         _this2.$router.push({
@@ -4185,7 +4176,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: 'Iniciar Session'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -4294,13 +4285,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       Swal.fire({
-        title: 'Estas seguro?',
-        text: "No podrás revertir esto!",
+        title: 'Está seguro?',
+        text: "No prodrás revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: '¡Sí, bórralo!'
+        confirmButtonText: 'Si, eliminar!',
+        cancelButtonText: 'Cancelar'
       }).then(function (result) {
         if (result.value) {
           axios["delete"]('api/prestamos/' + id).then(function () {
@@ -4327,7 +4319,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: 'Iniciar Sesion!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -4411,7 +4403,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -4527,7 +4519,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -4612,13 +4604,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       Swal.fire({
-        title: 'Seguro que Desea Eliminar?',
-        text: "¡No podrás revertir esto!",
+        title: 'Está seguro?',
+        text: "No prodrás revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: '¡Sí, bórralo!'
+        confirmButtonText: 'Si, eliminar!',
+        cancelButtonText: 'Cancelar'
       }).then(function (result) {
         if (result.value) {
           axios["delete"]('api/tipos/' + id).then(function () {
@@ -4642,7 +4635,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!User.loggedIn()) {
       Toast.fire({
         icon: 'warning',
-        title: '¡Inicie sesión primero!'
+        title: 'Inicia sesión primero!'
       });
       this.$router.push({
         name: 'login'
@@ -47409,6 +47402,7 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
@@ -47601,13 +47595,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "prestamoCreate" } }
                     },
-                    [_vm._v("Agregar Nuevo Prestamo")]
+                    [_vm._v("Nuevo Prestamo")]
                   )
                 ],
                 1
@@ -47670,16 +47665,6 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [
                               _vm._v(_vm._s(prestamo.fecha_devolucion))
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              prestamo.status == 2
-                                ? _c(
-                                    "div",
-                                    { staticClass: "badge badge-danger" },
-                                    [_vm._v("Devuelto")]
-                                  )
-                                : _vm._e()
                             ])
                           ])
                         : _vm._e()
@@ -47700,9 +47685,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h4", [_vm._v("Registro de Material Laboratio Devuelto")])
-    ])
+    return _c("div", [_c("h4", [_vm._v("Material Devuelto")])])
   },
   function() {
     var _vm = this
@@ -47710,21 +47693,19 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Persona Que solicita Prestamo")]),
+        _c("th", [_vm._v("Solicitó")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Material Prestado")]),
+        _c("th", [_vm._v("Material")]),
         _vm._v(" "),
         _c("th", [_vm._v("Administrador")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cantidad Prestado")]),
+        _c("th", [_vm._v("Cantidad")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Persona que Devuelve el Prestamo")]),
+        _c("th", [_vm._v("Devolvió")]),
         _vm._v(" "),
         _c("th", [_vm._v("Fecha Prestamo")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Fecha Devolucion")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Estado")])
+        _c("th", [_vm._v("Fecha Devolucion")])
       ])
     ])
   }
@@ -47786,13 +47767,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "prestamoCreate" } }
                     },
-                    [_vm._v("Agregar Nuevo Prestamo")]
+                    [_vm._v("Nuevo Prestamo")]
                   )
                 ],
                 1
@@ -47850,21 +47832,7 @@ var render = function() {
                                 ])
                               : _vm._e(),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(prestamo.fecha_prestamo))]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _vm._v(_vm._s(prestamo.fecha_devolucion))
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              prestamo.cantidad_prestamo > 0
-                                ? _c(
-                                    "div",
-                                    { staticClass: "badge badge-success" },
-                                    [_vm._v("Pendiente")]
-                                  )
-                                : _vm._e()
-                            ])
+                            _c("td", [_vm._v(_vm._s(prestamo.fecha_prestamo))])
                           ])
                         : _vm._e()
                     ])
@@ -47884,11 +47852,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h4", [
-        _vm._v("Registro de Material Laboratio Pendiente de Devolucion")
-      ])
-    ])
+    return _c("div", [_c("h4", [_vm._v("Material Pendiente de Devolucion")])])
   },
   function() {
     var _vm = this
@@ -47896,21 +47860,17 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Persona Que solicita Prestamo")]),
+        _c("th", [_vm._v("Solicitó")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Material Prestado")]),
+        _c("th", [_vm._v("Material")]),
         _vm._v(" "),
         _c("th", [_vm._v("Administrador")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cantidad Prestado")]),
+        _c("th", [_vm._v("Cantidad")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Persona que Devuelve el Prestamo")]),
+        _c("th", [_vm._v("Devolvió")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Fecha Prestamo")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Fecha Devolucion")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Estado")])
+        _c("th", [_vm._v("Fecha Prestamo")])
       ])
     ])
   }
@@ -47947,13 +47907,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "materialIndex" } }
                     },
-                    [_vm._v("Listar Materiales")]
+                    [_vm._v("Ver Materiales")]
                   )
                 ],
                 1
@@ -47990,7 +47951,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder: "Ingrese el Nombre del Material"
+                          placeholder: "Nombre del Material"
                         },
                         domProps: { value: _vm.form.nombre },
                         on: {
@@ -48025,10 +47986,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingres el Modelo"
-                        },
+                        attrs: { type: "text", placeholder: "Modelo" },
                         domProps: { value: _vm.form.modelo },
                         on: {
                           input: function($event) {
@@ -48064,8 +48022,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder:
-                            "Ingrese las Carcateristicas del Componente"
+                          placeholder: "Carcateristicas del Componente"
                         },
                         domProps: { value: _vm.form.caracteristicas },
                         on: {
@@ -48106,8 +48063,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder:
-                            "Ingrese la Cantidad Total de Componentes"
+                          placeholder: "Cantidad Total de Componentes"
                         },
                         domProps: { value: _vm.form.cantidad_total },
                         on: {
@@ -48148,7 +48104,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder: "Ingrese Cantidad bajo prestamo"
+                          placeholder: "Cantidad bajo prestamo"
                         },
                         domProps: { value: _vm.form.cantidad_prestamo },
                         on: {
@@ -48246,7 +48202,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Agregar Material Laboratorio")])])
+    return _c("div", [_c("h4", [_vm._v("Nuevo Material")])])
   },
   function() {
     var _vm = this
@@ -48301,7 +48257,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Agregar Material")
+          _vm._v("  Guardar")
         ])
       ])
     ])
@@ -48364,13 +48320,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "materialCreate" } }
                     },
-                    [_vm._v("Agregar Material de Laboratorio")]
+                    [_vm._v("Nuevo Material")]
                   )
                 ],
                 1
@@ -48417,24 +48374,6 @@ var render = function() {
                                       material.cantidad_prestamo
                                   )
                                 )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(_vm._s(material.fecha))]),
-                              _vm._v(" "),
-                              _c("td", [
-                                material.cantidad_total -
-                                  material.cantidad_prestamo !=
-                                0
-                                  ? _c(
-                                      "div",
-                                      { staticClass: "badge badge-success" },
-                                      [_vm._v("Disponible")]
-                                    )
-                                  : _c(
-                                      "div",
-                                      { staticClass: "badge badge-danger" },
-                                      [_vm._v("No Disponible")]
-                                    )
                               ])
                             ])
                           : _vm._e()
@@ -48472,11 +48411,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Caracteristica")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cantidad Restante")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Fecha")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Estado")])
+        _c("th", [_vm._v("Cantidad Restante")])
       ])
     ])
   }
@@ -48513,13 +48448,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "materialIndex" } }
                     },
-                    [_vm._v("Listar Materiales")]
+                    [_vm._v("Ver Materiales")]
                   )
                 ],
                 1
@@ -48812,7 +48748,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Agregar Material Laboratorio")])])
+    return _c("div", [_c("h4", [_vm._v("Editar Material")])])
   },
   function() {
     var _vm = this
@@ -48867,7 +48803,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Agregar Material")
+          _vm._v("  Actualizar")
         ])
       ])
     ])
@@ -48930,13 +48866,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "materialCreate" } }
                     },
-                    [_vm._v("Agregar Material")]
+                    [_vm._v("Nuevo Material")]
                   )
                 ],
                 1
@@ -49040,7 +48977,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Lista de Materiales de Laboratorio")])])
+    return _c("div", [
+      _c("h4", [_vm._v("Lista de Materiales del Laboratorio")])
+    ])
   },
   function() {
     var _vm = this
@@ -49057,7 +48996,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Cantidad Total")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Cantidad Prestamo")]),
+      _c("th", [_vm._v("Prestado")]),
       _vm._v(" "),
       _c("th", [_vm._v("Fecha")]),
       _vm._v(" "),
@@ -49124,13 +49063,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "materialCreate" } }
                     },
-                    [_vm._v("Agregar Nuevo Material")]
+                    [_vm._v("Nuevo Material")]
                   )
                 ],
                 1
@@ -49167,20 +49107,7 @@ var render = function() {
                               _vm._v(" "),
                               _c("td", [
                                 _vm._v(_vm._s(material.caracteristicas))
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _vm._v(
-                                  _vm._s(
-                                    material.cantidad_total -
-                                      material.cantidad_prestamo
-                                  )
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(_vm._s(material.fecha))]),
-                              _vm._v(" "),
-                              _vm._m(2, true)
+                              ])
                             ])
                           : _vm._e()
                       ])
@@ -49201,7 +49128,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Stock Disponible")])])
+    return _c("div", [_c("h4", [_vm._v("Stock Agotado")])])
   },
   function() {
     var _vm = this
@@ -49215,23 +49142,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Modelo")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Caracteristica")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Cantidad Disponible")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Fecha")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Estado")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("div", { staticClass: "badge badge-danger" }, [
-        _vm._v("No Disponible")
+        _c("th", [_vm._v("Caracteristica")])
       ])
     ])
   }
@@ -49268,13 +49179,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "personaIndex" } }
                     },
-                    [_vm._v("Listar Personas")]
+                    [_vm._v("Ver Personas")]
                   )
                 ],
                 1
@@ -49309,10 +49221,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese su Nombre"
-                        },
+                        attrs: { type: "text", placeholder: "Nombre" },
                         domProps: { value: _vm.form.nombre },
                         on: {
                           input: function($event) {
@@ -49346,10 +49255,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese su Apellido"
-                        },
+                        attrs: { type: "text", placeholder: "Apellido" },
                         domProps: { value: _vm.form.apellido },
                         on: {
                           input: function($event) {
@@ -49383,10 +49289,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese el numero de su CI"
-                        },
+                        attrs: { type: "text", placeholder: "Numero de su CI" },
                         domProps: { value: _vm.form.ci },
                         on: {
                           input: function($event) {
@@ -49422,8 +49325,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder:
-                            "Ingrese el Numero de su Carnet de Universidad"
+                          placeholder: "Numero de su Carnet de Universidad"
                         },
                         domProps: { value: _vm.form.cu },
                         on: {
@@ -49458,10 +49360,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese su N° de Telefono"
-                        },
+                        attrs: { type: "text", placeholder: "N° de Telefono" },
                         domProps: { value: _vm.form.telefono },
                         on: {
                           input: function($event) {
@@ -49597,7 +49496,7 @@ var render = function() {
                           cols: "10",
                           rows: "3",
                           type: "text",
-                          placeholder: "Ingrese la Direccion donde Vive"
+                          placeholder: "Direccion donde Vive"
                         },
                         domProps: { value: _vm.form.direccion },
                         on: {
@@ -49634,8 +49533,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder:
-                            "Ingrese el Nombre de la persona de Respaldo"
+                          placeholder: "Persona de Respaldo"
                         },
                         domProps: { value: _vm.form.nombre_respaldo },
                         on: {
@@ -49676,7 +49574,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder: "Ingrese el telefono de Respaldo"
+                          placeholder: "Telefono de Respaldo"
                         },
                         domProps: { value: _vm.form.telefono_respaldo },
                         on: {
@@ -49740,7 +49638,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Agregar Nueva Persona")])])
+    return _c("div", [_c("h4", [_vm._v("Nueva Persona")])])
   },
   function() {
     var _vm = this
@@ -49813,7 +49711,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Agregar Persona")
+          _vm._v("  Guardar")
         ])
       ])
     ])
@@ -49851,6 +49749,7 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
@@ -49893,10 +49792,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese su Nombre"
-                        },
+                        attrs: { type: "text", placeholder: "Nombre" },
                         domProps: { value: _vm.form.nombre },
                         on: {
                           input: function($event) {
@@ -49930,10 +49826,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese su Apellido"
-                        },
+                        attrs: { type: "text", placeholder: "Apellido" },
                         domProps: { value: _vm.form.apellido },
                         on: {
                           input: function($event) {
@@ -49967,10 +49860,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese el numero de su CI"
-                        },
+                        attrs: { type: "text", placeholder: "Numero de su CI" },
                         domProps: { value: _vm.form.ci },
                         on: {
                           input: function($event) {
@@ -50006,8 +49896,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder:
-                            "Ingrese el Numero de su Carnet de Universidad"
+                          placeholder: "Numero de su Carnet de Universidad"
                         },
                         domProps: { value: _vm.form.cu },
                         on: {
@@ -50042,10 +49931,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Ingrese su N° de Telefono"
-                        },
+                        attrs: { type: "text", placeholder: "N° de Telefono" },
                         domProps: { value: _vm.form.telefono },
                         on: {
                           input: function($event) {
@@ -50181,7 +50067,7 @@ var render = function() {
                           cols: "10",
                           rows: "3",
                           type: "text",
-                          placeholder: "Ingrese la Direccion donde Vive"
+                          placeholder: "Direccion donde Vive"
                         },
                         domProps: { value: _vm.form.direccion },
                         on: {
@@ -50218,8 +50104,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder:
-                            "Ingrese el Nombre de la persona de Respaldo"
+                          placeholder: "Nombre de la persona de Respaldo"
                         },
                         domProps: { value: _vm.form.nombre_respaldo },
                         on: {
@@ -50260,7 +50145,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          placeholder: "Ingrese el telefono de Respaldo"
+                          placeholder: "Telefono de Respaldo"
                         },
                         domProps: { value: _vm.form.telefono_respaldo },
                         on: {
@@ -50397,7 +50282,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Actualizar Datos Persona")
+          _vm._v("  Actualizar")
         ])
       ])
     ])
@@ -50460,13 +50345,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "personaCreate" } }
                     },
-                    [_vm._v("Agregar Persona")]
+                    [_vm._v("Nueva Persona")]
                   )
                 ],
                 1
@@ -50567,7 +50453,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Lista de Personas Registradas")])])
+    return _c("div", [_c("h4", [_vm._v("Lista de Personas")])])
   },
   function() {
     var _vm = this
@@ -50593,7 +50479,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Fecha Nacimiento")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Nombre del Garante")]),
+        _c("th", [_vm._v("Garante")]),
         _vm._v(" "),
         _c("th", [_vm._v("Telefono del Garante")]),
         _vm._v(" "),
@@ -50634,13 +50520,30 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "prestamoIndex" } }
                     },
-                    [_vm._v("Listar Prestamos")]
+                    [_vm._v("Ver Prestamos")]
+                  )
+                ],
+                1
+              ),
+              _vm._v("  \n                        "),
+              _c(
+                "div",
+                [
+                  _vm._v("  \n                            "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { to: { name: "personaCreate" } }
+                    },
+                    [_vm._v("Nueva Persona")]
                   )
                 ],
                 1
@@ -50889,7 +50792,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Añadir Prestamo")])])
+    return _c("div", [_c("h4", [_vm._v("Nuevo Prestamo")])])
   },
   function() {
     var _vm = this
@@ -50908,7 +50811,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Agregar Registro Prestamo")
+          _vm._v("  Guardar")
         ])
       ])
     ])
@@ -50946,13 +50849,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "prestamoIndex" } }
                     },
-                    [_vm._v("Listar Prestamos")]
+                    [_vm._v("Ver Prestamos")]
                   )
                 ],
                 1
@@ -51326,7 +51230,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Registrar Devolucion")
+          _vm._v("  Registrar Devolucion")
         ])
       ])
     ])
@@ -51389,13 +51293,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "prestamoCreate" } }
                     },
-                    [_vm._v("Agregar Nuevo Prestamo")]
+                    [_vm._v("Nuevo Prestamo")]
                   )
                 ],
                 1
@@ -51522,22 +51427,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Listar Prestamos")])])
+    return _c("div", [_c("h4", [_vm._v("Lista de Prestamos")])])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("tr", [
-      _c("th", [_vm._v("Persona Que solicita Prestamo")]),
+      _c("th", [_vm._v("Solicitó")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Material Prestado")]),
+      _c("th", [_vm._v("Material")]),
       _vm._v(" "),
       _c("th", [_vm._v("Administrador")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Cantidad Prestado")]),
+      _c("th", [_vm._v("Cantidad")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Persona que Devuelve el Prestamo")]),
+      _c("th", [_vm._v("Devolvió")]),
       _vm._v(" "),
       _c("th", [_vm._v("Fecha Prestamo")]),
       _vm._v(" "),
@@ -51581,13 +51486,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "tipoIndex" } }
                     },
-                    [_vm._v("Lista Tipo  Persona")]
+                    [_vm._v("Ver Tipo Persona")]
                   )
                 ],
                 1
@@ -51664,7 +51570,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Agregar Tipo  Persona")])])
+    return _c("div", [_c("h4", [_vm._v("Nueva Persona")])])
   },
   function() {
     var _vm = this
@@ -51683,7 +51589,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v(" Agregar Tipo")
+          _vm._v("  Guardar")
         ])
       ])
     ])
@@ -51721,13 +51627,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "tipoIndex" } }
                     },
-                    [_vm._v("Listar Tipo Personas")]
+                    [_vm._v("Ver Personas")]
                   )
                 ],
                 1
@@ -51801,7 +51708,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Actualizar Tipo Persona")])])
+    return _c("div", [_c("h4", [_vm._v("Editar Tipo Persona")])])
   },
   function() {
     var _vm = this
@@ -51820,7 +51727,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "form-group" }, [
         _c("button", { staticClass: "btn btn-info" }, [
           _c("i", { staticClass: "fas fa-plus" }),
-          _vm._v("Actualizar")
+          _vm._v("  Actualizar")
         ])
       ])
     ])
@@ -51883,13 +51790,14 @@ var render = function() {
               _c(
                 "div",
                 [
+                  _vm._v("  \n                            "),
                   _c(
                     "router-link",
                     {
                       staticClass: "btn btn-success",
                       attrs: { to: { name: "tipoCreate" } }
                     },
-                    [_vm._v("Agregar Tipo")]
+                    [_vm._v("Nuevo Tipo")]
                   )
                 ],
                 1
@@ -51959,7 +51867,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Listar Tipo Persona")])])
+    return _c("div", [_c("h4", [_vm._v("Lista Tipo Persona")])])
   },
   function() {
     var _vm = this
@@ -67153,47 +67061,7 @@ var Notification = /*#__PURE__*/function () {
       new Noty({
         type: 'success',
         layout: 'topRight',
-        text: 'Successfully Done',
-        timeout: 1000
-      }).show();
-    }
-  }, {
-    key: "addTocart",
-    value: function addTocart() {
-      new Noty({
-        type: 'success',
-        layout: 'topRight',
-        text: 'Cart Added Successfully',
-        timeout: 1000
-      }).show();
-    }
-  }, {
-    key: "cartRemove",
-    value: function cartRemove() {
-      new Noty({
-        type: 'error',
-        layout: 'topRight',
-        text: 'Cart Removed',
-        timeout: 1000
-      }).show();
-    }
-  }, {
-    key: "increment",
-    value: function increment() {
-      new Noty({
-        type: 'success',
-        layout: 'topRight',
-        text: 'Cart Increment',
-        timeout: 1000
-      }).show();
-    }
-  }, {
-    key: "decrement",
-    value: function decrement() {
-      new Noty({
-        type: 'success',
-        layout: 'topRight',
-        text: 'Cart Decrement',
+        text: 'Acción exitosa',
         timeout: 1000
       }).show();
     }
@@ -67203,7 +67071,7 @@ var Notification = /*#__PURE__*/function () {
       new Noty({
         type: 'alert',
         layout: 'topRight',
-        text: 'Are you sure ?',
+        text: 'Estas seguro?',
         timeout: 1000
       }).show();
     }
@@ -67213,7 +67081,7 @@ var Notification = /*#__PURE__*/function () {
       new Noty({
         type: 'error',
         layout: 'topRight',
-        text: 'Data Deleted!',
+        text: 'Datos eliminados!',
         timeout: 1000
       }).show();
     }
@@ -67223,7 +67091,7 @@ var Notification = /*#__PURE__*/function () {
       new Noty({
         type: 'warning',
         layout: 'topRight',
-        text: 'Oops ! Wrong ',
+        text: 'Oops ! Algo salió mal',
         timeout: 1000
       }).show();
     }
@@ -67233,7 +67101,7 @@ var Notification = /*#__PURE__*/function () {
       new Noty({
         type: 'warning',
         layout: 'topRight',
-        text: 'Image File, less then 1 MB',
+        text: 'Imagen, menos de 1 MB',
         timeout: 2000
       }).show();
     }
@@ -69027,8 +68895,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /opt/lampp/htdocs/Lab_Robotica/InventarioLabRobotica/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /opt/lampp/htdocs/Lab_Robotica/InventarioLabRobotica/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\david\OneDrive\Pictures\Escritorio\SistemaInventario\Sistema-de-Inventario-Laboratorio-Robotica\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\david\OneDrive\Pictures\Escritorio\SistemaInventario\Sistema-de-Inventario-Laboratorio-Robotica\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

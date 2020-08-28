@@ -6,10 +6,10 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h4>Agregar Nueva Persona</h4>
+                                <h4>Nueva Persona</h4>
                             </div>
-                            <div>
-                                <router-link :to="{name:'personaIndex'}" class="btn btn-success">Listar Personas</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'personaIndex'}" class="btn btn-success">Ver Personas</router-link>
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nombre<span class="text-danger">*</span></label>
-                                        <input v-model="form.nombre" type="text" class="form-control" placeholder="Ingrese su Nombre">
+                                        <input v-model="form.nombre" type="text" class="form-control" placeholder="Nombre">
                                         <small class="text-danger" v-if="errors.nombre">{{errors.nombre[0]}}</small>
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Apellido<span class="text-danger">*</span></label>
-                                        <input v-model="form.apellido" type="text" class="form-control" placeholder="Ingrese su Apellido">
+                                        <input v-model="form.apellido" type="text" class="form-control" placeholder="Apellido">
                                         <small class="text-danger" v-if="errors.apellido">{{errors.apellido[0]}}</small>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>CI<span class="text-danger">*</span></label>
-                                        <input v-model="form.ci" type="text" class="form-control" placeholder="Ingrese el numero de su CI">
+                                        <input v-model="form.ci" type="text" class="form-control" placeholder="Numero de su CI">
                                         <small class="text-danger" v-if="errors.ci">{{errors.ci[0]}}</small>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>CU<span class="text-danger">*</span></label>
-                                        <input v-model="form.cu" type="text" class="form-control" placeholder="Ingrese el Numero de su Carnet de Universidad">
+                                        <input v-model="form.cu" type="text" class="form-control" placeholder="Numero de su Carnet de Universidad">
                                         <small class="text-danger" v-if="errors.cu">{{errors.cu[0]}}</small>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Telefono<span class="text-danger">*</span></label>
-                                        <input v-model="form.telefono" type="text" class="form-control" placeholder="Ingrese su N° de Telefono">
+                                        <input v-model="form.telefono" type="text" class="form-control" placeholder="N° de Telefono">
                                         <small class="text-danger" v-if="errors.telefono">{{errors.telefono[0]}}</small>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Direccion</label>
-                                        <textarea v-model="form.direccion" cols="10" rows="3" type="text" class="form-control" placeholder="Ingrese la Direccion donde Vive"></textarea>
+                                        <textarea v-model="form.direccion" cols="10" rows="3" type="text" class="form-control" placeholder="Direccion donde Vive"></textarea>
                                         <small class="text-danger" v-if="errors.direccion">{{errors.direccion[0]}}</small>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nombre de Persona Garante<span class="text-danger">*</span></label>
-                                        <input v-model="form.nombre_respaldo" type="text" class="form-control" placeholder="Ingrese el Nombre de la persona de Respaldo">
+                                        <input v-model="form.nombre_respaldo" type="text" class="form-control" placeholder="Persona de Respaldo">
                                         <small class="text-danger" v-if="errors.nombre_respaldo">{{errors.nombre_respaldo[0]}}</small>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Telefono de Respaldo<span class="text-danger">*</span></label>
-                                        <input v-model="form.telefono_respaldo" type="text" class="form-control" placeholder="Ingrese el telefono de Respaldo">
+                                        <input v-model="form.telefono_respaldo" type="text" class="form-control" placeholder="Telefono de Respaldo">
                                         <small class="text-danger" v-if="errors.telefono_respaldo">{{errors.telefono_respaldo[0]}}</small>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Agregar Persona</button>
+                                        <button class="btn btn-info"><i class="fas fa-plus"></i>&nbsp Guardar</button>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: '¡Inicie sesión primero!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

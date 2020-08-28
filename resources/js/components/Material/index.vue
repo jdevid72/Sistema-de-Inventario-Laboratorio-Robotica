@@ -6,13 +6,13 @@
                     <div class="card-header">
                         <div class="d-flex">
                             <div>
-                                <h4>Lista de Materiales de Laboratorio</h4>
+                                <h4>Lista de Materiales del Laboratorio</h4>
                             </div>
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchFillter" @keyup="searchMaterial">
                             </div>
-                            <div>
-                                <router-link :to="{name:'materialCreate'}" class="btn btn-success">Agregar Material</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'materialCreate'}" class="btn btn-success">Nuevo Material</router-link>
                             </div>
                         </div>
 
@@ -27,7 +27,7 @@
                                     <th>Modelo</th>
                                     <th>Caracteristica</th>
                                     <th>Cantidad Total</th>
-                                    <th>Cantidad Prestamo</th>
+                                    <th>Prestado</th>
                                     <th>Fecha</th>
                                     <th>Estado</th>
                                     <th colspan="2">Accion</th>
@@ -85,13 +85,14 @@
             },
             materialDel(id){
                 Swal.fire({
-                    title: 'Seguro que Desea Eliminar?',
-                    text: "¡No podrás revertir esto!",
+                    title: 'Está seguro?',
+                    text: "No prodrás revertir esta acción!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: '¡Sí, bórralo!'
+                    confirmButtonText: 'Si, eliminar!',
+                    cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.value) {
                         axios.delete('api/materials/'+id)
@@ -116,7 +117,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: '¡Inicie sesión primero!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

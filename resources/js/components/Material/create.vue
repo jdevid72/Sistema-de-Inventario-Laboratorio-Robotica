@@ -6,10 +6,10 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h4>Agregar Material Laboratorio</h4>
+                                <h4>Nuevo Material</h4>
                             </div>
-                            <div>
-                                <router-link :to="{name:'materialIndex'}" class="btn btn-success">Listar Materiales</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'materialIndex'}" class="btn btn-success">Ver Materiales</router-link>
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nombre Material<span class="text-danger">*</span></label>
-                                        <input v-model="form.nombre" type="text" class="form-control" placeholder="Ingrese el Nombre del Material">
+                                        <input v-model="form.nombre" type="text" class="form-control" placeholder="Nombre del Material">
                                         <small class="text-danger" v-if="errors.nombre">{{errors.nombre[0]}}</small>
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Modelo<span class="text-danger">*</span></label>
-                                        <input v-model="form.modelo" type="text" class="form-control" placeholder="Ingres el Modelo">
+                                        <input v-model="form.modelo" type="text" class="form-control" placeholder="Modelo">
                                         <small class="text-danger" v-if="errors.modelo">{{errors.modelo[0]}}</small>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Caracteristicas del Componente<span class="text-danger">*</span></label>
-                                        <input v-model="form.caracteristicas" type="text" class="form-control" placeholder="Ingrese las Carcateristicas del Componente">
+                                        <input v-model="form.caracteristicas" type="text" class="form-control" placeholder="Carcateristicas del Componente">
                                         <small class="text-danger" v-if="errors.caracteristicas">{{errors.caracteristicas[0]}}</small>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Cantidad Total<span class="text-danger">*</span></label>
-                                        <input v-model="form.cantidad_total" type="text" class="form-control" placeholder="Ingrese la Cantidad Total de Componentes">
+                                        <input v-model="form.cantidad_total" type="text" class="form-control" placeholder="Cantidad Total de Componentes">
                                         <small class="text-danger" v-if="errors.cantidad_total">{{errors.cantidad_total[0]}}</small>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Cantidad en Prestamo<span class="text-danger">*</span></label>
-                                        <input v-model="form.cantidad_prestamo" type="text" class="form-control" placeholder="Ingrese Cantidad bajo prestamo">
+                                        <input v-model="form.cantidad_prestamo" type="text" class="form-control" placeholder="Cantidad bajo prestamo">
                                         <small class="text-danger" v-if="errors.cantidad_prestamo">{{errors.cantidad_prestamo[0]}}</small>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Agregar Material</button>
+                                        <button class="btn btn-info"><i class="fas fa-plus"></i>&nbsp Guardar</button>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: '¡Inicie sesión primero!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

@@ -6,13 +6,13 @@
                     <div class="card-header">
                         <div class="d-flex">
                             <div>
-                                <h4>Listar Prestamos</h4>
+                                <h4>Lista de Prestamos</h4>
                             </div>
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchFillter" @keyup="searchPrestamo">
                             </div>
-                            <div>
-                                <router-link :to="{name:'prestamoCreate'}" class="btn btn-success">Agregar Nuevo Prestamo</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'prestamoCreate'}" class="btn btn-success">Nuevo Prestamo</router-link>
                             </div>
                         </div>
 
@@ -22,11 +22,11 @@
                             <table class="table table-striped table-md">
                                 <tbody><tr>
 
-                                    <th>Persona Que solicita Prestamo</th>
-                                    <th>Material Prestado</th>
+                                    <th>Solicitó</th>
+                                    <th>Material</th>
                                     <th>Administrador</th>
-                                    <th>Cantidad Prestado</th>
-                                    <th>Persona que Devuelve el Prestamo</th>
+                                    <th>Cantidad</th>
+                                    <th>Devolvió</th>
                                     <th>Fecha Prestamo</th>
                                     <th>Fecha Devolucion</th>
                                     <th>Estado</th>
@@ -83,13 +83,14 @@
             },
             prestamoDel(id){
                 Swal.fire({
-                    title: 'Estas seguro?',
-                    text: "No podrás revertir esto!",
+                    title: 'Está seguro?',
+                    text: "No prodrás revertir esta acción!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: '¡Sí, bórralo!'
+                    confirmButtonText: 'Si, eliminar!',
+                    cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.value) {
                         axios.delete('api/prestamos/'+id)
@@ -117,7 +118,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: 'Iniciar Sesion!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

@@ -6,13 +6,13 @@
                     <div class="card-header">
                         <div class="d-flex">
                             <div>
-                                <h4>Registro de Material Laboratio Devuelto</h4>
+                                <h4>Material Devuelto</h4>
                             </div>
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchFillter" @keyup="searchPrestamo">
                             </div>
-                            <div>
-                                <router-link :to="{name:'prestamoCreate'}" class="btn btn-success">Agregar Nuevo Prestamo</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'prestamoCreate'}" class="btn btn-success">Nuevo Prestamo</router-link>
                             </div>
                         </div>
 
@@ -22,14 +22,13 @@
                             <table class="table table-striped table-md">
                                 <thead><tr>
 
-                                    <th>Persona Que solicita Prestamo</th>
-                                    <th>Material Prestado</th>
+                                    <th>Solicitó</th>
+                                    <th>Material</th>
                                     <th>Administrador</th>
-                                    <th>Cantidad Prestado</th>
-                                    <th>Persona que Devuelve el Prestamo</th>
+                                    <th>Cantidad</th>
+                                    <th>Devolvió</th>
                                     <th>Fecha Prestamo</th>
                                     <th>Fecha Devolucion</th>
-                                    <th>Estado</th>
                                 </tr>
                                 </thead>
                                 <tbody v-for="prestamo in searchPrestamo" :key="prestamo.id">
@@ -41,10 +40,6 @@
                                     <td v-if="prestamo.persona != null">{{prestamo.persona.nombre}} {{prestamo.persona.apellido}}</td>
                                     <td>{{prestamo.fecha_prestamo}}</td>
                                     <td>{{prestamo.fecha_devolucion}}</td>
-
-                                    <td>
-                                        <div v-if="prestamo.status == 2 " class="badge badge-danger">Devuelto</div>
-                                    </td>
                                 </tr>
                                 </tbody></table>
                         </div>
@@ -81,7 +76,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: 'Iniciar Sesion!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

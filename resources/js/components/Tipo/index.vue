@@ -6,13 +6,13 @@
                     <div class="card-header">
                         <div class="d-flex">
                             <div>
-                                <h4>Listar Tipo Persona</h4>
+                                <h4>Lista Tipo Persona</h4>
                             </div>
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchData" @keyup="searchFillter">
                             </div>
-                            <div>
-                                <router-link :to="{name:'tipoCreate'}" class="btn btn-success">Agregar Tipo</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'tipoCreate'}" class="btn btn-success">Nuevo Tipo</router-link>
                             </div>
                         </div>
 
@@ -59,13 +59,14 @@
             },
             eliminarTipo(id){
                 Swal.fire({
-                    title: 'Seguro que Desea Eliminar?',
-                    text: "¡No podrás revertir esto!",
+                    title: 'Está seguro?',
+                    text: "No prodrás revertir esta acción!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: '¡Sí, bórralo!'
+                    confirmButtonText: 'Si, eliminar!',
+                    cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.value) {
                         axios.delete('api/tipos/'+id)
@@ -90,7 +91,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: '¡Inicie sesión primero!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

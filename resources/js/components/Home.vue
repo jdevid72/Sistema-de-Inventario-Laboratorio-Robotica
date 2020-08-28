@@ -11,7 +11,7 @@
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchFillter" @keyup="searchMaterial">
                             </div>
-                            <div>
+                            <div>&nbsp&nbsp
                                 <router-link :to="{name:'materialCreate'}" class="btn btn-success">Agregar Material</router-link>
                             </div>
                         </div>

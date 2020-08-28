@@ -6,13 +6,13 @@
                     <div class="card-header">
                         <div class="d-flex">
                             <div>
-                                <h4>Lista de Personas Registradas</h4>
+                                <h4>Lista de Personas</h4>
                             </div>
                             <div>
                                 <input type="text" class="form-control mr-50" placeholder="Buscar" v-model="searchFillter" @keyup="searchPersona">
                             </div>
-                            <div>
-                                <router-link :to="{name:'personaCreate'}" class="btn btn-success">Agregar Persona</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'personaCreate'}" class="btn btn-success">Nueva Persona</router-link>
                             </div>
                         </div>
 
@@ -21,7 +21,6 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-md">
                                 <thead><tr>
-
                                     <th>Perfil</th>
                                     <th>Nombre</th>
                                     <th>Apellido</th>
@@ -31,7 +30,7 @@
                                     <th>Tipo</th>
                                     <th>Telefono</th>
                                     <th>Fecha Nacimiento</th>
-                                    <th>Nombre del Garante</th>
+                                    <th>Garante</th>
                                     <th>Telefono del Garante</th>
                                     <th colspan="2">Accion</th>
                                 </tr></thead>
@@ -87,13 +86,14 @@
             },
             personaDel(id){
                 Swal.fire({
-                    title: 'Seguro que Desea Eliminar?',
-                    text: "¡No podrás revertir esto!",
+                    title: 'Está seguro?',
+                    text: "No prodrás revertir esta acción!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: '¡Sí, bórralo!'
+                    confirmButtonText: 'Si, eliminar!',
+                    cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.value) {
                         axios.delete('api/personas/'+id)
@@ -118,7 +118,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: '¡Inicie sesión primero!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

@@ -8,8 +8,8 @@
                             <div>
                                 <h4>Actualizar Prestamo</h4>
                             </div>
-                            <div>
-                                <router-link :to="{name:'prestamoIndex'}" class="btn btn-success">Listar Prestamos</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'prestamoIndex'}" class="btn btn-success">Ver Prestamos</router-link>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Registrar Devolucion</button>
+                                        <button class="btn btn-info"><i class="fas fa-plus"></i>&nbsp Registrar Devolucion</button>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@
                     .then(res=>{
                         Toast.fire({
                             icon: 'success',
-                            title: 'SE Acaba de Registrar la Devolucion con Exito'
+                            title: 'Se acaba de Registrar la Devolucion con Exito'
 
                         });
                         this.$router.push({name:'prestamoIndex'})
@@ -167,7 +167,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: 'Iniciar Session',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }

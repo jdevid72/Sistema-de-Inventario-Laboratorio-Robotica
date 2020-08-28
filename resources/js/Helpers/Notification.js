@@ -1,80 +1,46 @@
-class Notification{
-    success(){
+class Notification {
+    success() {
         new Noty({
-            type:'success',
-            layout:'topRight',
-            text: 'Successfully Done',
-            timeout:1000,
-         }).show();
-    }
-
-    addTocart(){
-        new Noty({
-            type:'success',
-            layout:'topRight',
-            text: 'Cart Added Successfully',
-            timeout:1000,
-        }).show();
-    }
-    cartRemove(){
-        new Noty({
-            type:'error',
-            layout:'topRight',
-            text: 'Cart Removed',
-            timeout:1000,
+            type: 'success',
+            layout: 'topRight',
+            text: 'Acción exitosa',
+            timeout: 1000,
         }).show();
     }
 
-    increment(){
+    alert() {
         new Noty({
-            type:'success',
-            layout:'topRight',
-            text: 'Cart Increment',
-            timeout:1000,
+            type: 'alert',
+            layout: 'topRight',
+            text: 'Estas seguro?',
+            timeout: 1000,
         }).show();
     }
 
-    decrement(){
+    error() {
         new Noty({
-            type:'success',
-            layout:'topRight',
-            text: 'Cart Decrement',
-            timeout:1000,
+            type: 'error',
+            layout: 'topRight',
+            text: 'Datos eliminados!',
+            timeout: 1000,
         }).show();
     }
 
-    alert(){
+    warning() {
         new Noty({
-            type:'alert',
-            layout:'topRight',
-            text: 'Are you sure ?',
-            timeout:1000,
+            type: 'warning',
+            layout: 'topRight',
+            text: 'Oops ! Algo salió mal',
+            timeout: 1000,
         }).show();
     }
 
-    error(){
+    imageValidation() {
         new Noty({
-            type:'error',
-            layout:'topRight',
-            text: 'Data Deleted!',
-            timeout:1000,
-        }).show();
-    }
-
-    warning(){
-        new Noty({
-            type:'warning',
-            layout:'topRight',
-            text: 'Oops ! Wrong ',
-            timeout:1000,
-        }).show();
-    }
-    imageValidation(){
-        new Noty({
-            type:'warning',
-            layout:'topRight',
-            text: 'Image File, less then 1 MB',
-            timeout:2000,
+            type: 'warning',
+            layout: 'topRight',
+            text: 'Imagen, menos de 1 MB',
+            timeout: 2000,
         }).show();
     }
 

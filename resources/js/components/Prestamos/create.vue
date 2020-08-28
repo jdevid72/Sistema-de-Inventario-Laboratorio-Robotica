@@ -6,10 +6,13 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h4>Añadir Prestamo</h4>
+                                <h4>Nuevo Prestamo</h4>
                             </div>
-                            <div>
-                                <router-link :to="{name:'prestamoIndex'}" class="btn btn-success">Listar Prestamos</router-link>
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'prestamoIndex'}" class="btn btn-success">Ver Prestamos</router-link>
+                            </div>&nbsp&nbsp
+                            <div>&nbsp&nbsp
+                                <router-link :to="{name:'personaCreate'}" class="btn btn-success">Nueva Persona</router-link>
                             </div>
                         </div>
                     </div>
@@ -62,7 +65,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-info"><i class="fas fa-plus"></i>Agregar Registro Prestamo</button>
+                                        <button class="btn btn-info"><i class="fas fa-plus"></i>&nbsp Guardar</button>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +128,7 @@
             if(!User.loggedIn()){
                 Toast.fire({
                     icon: 'warning',
-                    title: 'Iniciar Session!',
+                    title: 'Inicia sesión primero!',
                 });
                 this.$router.push({name:'login'})
             }
